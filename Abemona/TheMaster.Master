@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TheMaster.master.cs" Inherits="Abemona.TheMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ <script src="https://kit.fontawesome.com/4828a4f7eb.js" crossorigin="anonymous"></script>
+    <style>
+        a {
+            font-weight: bolder !important;
+            transition: transform .3s ease!important;
+            font-family: Quicksand;
+            color: white!important;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+        }
+
+         @media screen and (min-width: 992px) {
+            .reg {
+                height: 40px;
+            }
+
+            .botonSalir {
+                font-size: 16px;
+            }
+
+            #logoAbajo {
+                width: 67px;
+                position: fixed;
+                top: 90%;
+                left: 90%;
+                z-index: 3;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+
+            #logo {
+                font-size: 43px;
+            }
+
+            .boton {
+                font-size: 41px;
+            }
+
+            #finalNav {
+                width: 394px;
+                padding: 7px;
+                border-width: 5px; /* Grosor del borde de 5 píxeles */
+                border-style: solid; /* Tipo de borde (necesario para que se vea el borde) */
+                border-color: #e2aed5; /* Color del borde */
+            }
+
+            #b1 {
+                width: 110px;
+                font-size: 31px;
+                align-content: center;
+            }
+
+            #b2 {
+                width: 187px;
+                font-size: 31px;
+                align-content: center;
+                height: 82px;
+            }
+
+            #imgAvatar {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            #lista {
+                font-size: 40px;
+                margin-bottom: 0px !important;
+            }
+
+            .botonSalir {
+                font-size: 31px !important;
+            }
+
+            #logoAbajo {
+                width: 99px;
+                position: fixed;
+                top: 90%;
+                left: 87%;
+                z-index: 3;
+            }
+        }
+
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <nav class="navbar navbar-expand-lg" style="background-color: #e2aed5;">
+            <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="Default.aspx">Inicio</a>
+                        <a class="nav-link" href="Nosotras.aspx">Nosotras</a>
+                        <a class="nav-link" href="Coleccion.aspx">Colección</a>
+                        <a class="nav-link" href="Blog.aspx">Blog</a>
+                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="Administracion.aspx">Administración</a>
+                         <a class="nav-link" href="MiPerfil.aspx">Mi Perfil</a>
+                    </div>
+                </div>
+
+                <div class="d-flex" style="background-color: #e2aed5;" id="finalNav">
+
+                    <% if (!Negocio.Seguridad.sesionActiva(Session["usuario"]))
+                        { %>
+                    <a href="Login.aspx" class="btn btn-success me-2" id="b1">Login</a>
+                    <a href="Registro.aspx" class="btn btn-success m-auto reg" id="b2">Registrarse</a>
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <asp:Button Text="Salir" ID="btnSalir" CssClass="btn btn-success me-2 botonSalir" OnClick="btnSalir_Click" runat="server" />
+                    <asp:Label Text="User" runat="server" ID="lblUser" CssClass="text-light m-auto me-2 " />
+                    <% } %>
+                    <asp:Image runat="server" ID="imgAvatar" Style="height: 40px; border-radius: 50%; width: 40px; margin-left: 7px;" />
+                </div>
+
+            </div>
+        </nav>
+
+         <div>
+            <img src="Imagenes/m.png" alt="Alternate Text" id="logoAbajo" />
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
