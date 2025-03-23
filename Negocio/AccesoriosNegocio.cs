@@ -332,7 +332,66 @@ namespace Negocio
             }
         }
 
-        
+        public List<Accesorio> listarFavs(string id)
+        {
+            List<Accesorio> lista = new List<Accesorio>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                string consulta = "select F.IdUser, A.Id 'IdAcc', A.Codigo, A.Nombre, A.Descripcion, A.Imagen, " +
+                    " A.Precio, C.Nombre Categoria, A.IdCategoria, A.IdMaterial, M.Nombre MATERIAL " +
+                    "from FAVORITOS F " +
+                    "join USERS U on U.Id = F.IdUser " +
+                    "join ACCESORIOS A on A.Id = F.IdAccesorio " +
+                    "join MATERIALES M on M.Id = A.IdMaterial " +
+                    "join CATEGORIAS C on C.Id = A.IdCategoria " +
+                    "where U.Id = @idUser";
+
+                datos.setearParametro("@idUser", id);
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Accesorio aux = new Accesorio();
+                    aux.Id = (int)datos.Lector["IdAcc"];
+                    aux.Codigo = Convert.ToString(datos.Lector["Codigo"]);
+                    aux.Nombre = Convert.ToString(datos.Lector["Nombre"]);
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Precio = (int)datos.Lector["Precio"];
+
+                    if (!(datos.Lector["Imagen"] is DBNull))
+                        aux.Imagen = (string)datos.Lector["Imagen"];
+
+                    aux.Material = new Elemento();
+                    aux.Material.Id = (int)datos.Lector["IdMaterial"];
+                    aux.Material.Nombre = (string)datos.Lector["Material"];
+
+                    aux.Categoria = new Elemento();
+                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.Nombre = (string)datos.Lector["Categoria"];
+
+                    lista.Add(aux);
+
+                }
+
+                datos.cerrarConexion();
+                return lista;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
 
 
 

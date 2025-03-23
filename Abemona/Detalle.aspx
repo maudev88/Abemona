@@ -108,7 +108,7 @@
 
                 <div style="display: flex; justify-content: space-around;" class="align-items-lg-center">
                     <div class="botonnDiv">
-                        <asp:Button Text="Volver al Catálogo" ID="btnVolver" CssClass="btn botonn d-block mx-auto mt-xxl-5 botones" OnClick="btnVolver_Click" runat="server" Style="color: white; background-color: #e2aed5;" />
+                        <asp:Button Text="Ir al Catálogo" ID="btnVolver" CssClass="btn botonn d-block mx-auto mt-xxl-5 botones" OnClick="btnVolver_Click" runat="server" Style="color: white; background-color: #e2aed5;" />
                     </div>
 
 
