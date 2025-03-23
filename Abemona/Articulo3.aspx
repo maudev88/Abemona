@@ -1,10 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TheMaster.Master" AutoEventWireup="true" CodeBehind="Articulo3.aspx.cs" Inherits="Abemona.Articulo3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-     <style>
+    <style>
         p {
             font-family: Quicksand;
         }
+
+         .botonn {
+            transition: transform .3s ease !important;
+            background-color: #e2aed5;
+            color: white;
+            font-weight: bolder;
+            font-family: Quicksand;
+        }
+
+            .botonn:hover {
+                transform: scale(1.1);
+                background-color: #e2aed5;
+                color: white;
+                font-weight: bolder;
+                font-family: Quicksand;
+            }
+
+            .botonn:active {
+                transform: scale(1.1);
+                background-color: #e2aed5 !important;
+                color: white !important;
+                font-weight: bolder;
+                font-family: Quicksand;
+            }
 
         /*FOOTER*/
 
@@ -21,9 +46,9 @@
             gap: 30px;
         }
 
-        .footer p {
-            margin: 0px;
-        }
+            .footer p {
+                margin: 0px;
+            }
 
         h4 {
             font-weight: bolder;
@@ -38,7 +63,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <h1 style="text-align: center; margin: 50px 0px;">Cómo Cuidar Tus Joyas y Mantenerlas Siempre Brillantes</h1>
+    <h1 style="text-align: center; margin: 50px 0px;">Cómo cuidar tus accesorios y mantenerlos siempre brillantes</h1>
 
     <div style="display: flex; align-items: center; flex-direction: column;">
         <div>
@@ -46,16 +71,21 @@
         </div>
         <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;">
             <p>
-              Para que tus joyas siempre luzcan impecables, es fundamental cuidarlas adecuadamente. Un paso esencial es guardarlas en un lugar adecuado,
-                como una caja de joyas forrada con tela suave que evite el contacto con otros metales o piedras. Evita el contacto de tus piezas con productos 
-                químicos como perfumes, cremas o limpiadores, ya que pueden dañar los materiales y reducir el brillo de las piedras. Si tus joyas tienen detalles
-                de piedras preciosas o cristales, asegúrate de limpiarlas regularmente con un paño suave para eliminar cualquier suciedad.
+                Para que tus accesorios siempre luzcan impecables, es fundamental cuidarlas adecuadamente. Un paso esencial es guardarlos en un lugar adecuado,
+                como una caja forrada con tela suave que evite el contacto con otros metales o piedras. Evita el contacto de tus piezas con productos 
+                químicos como perfumes, cremas o limpiadores, ya que pueden dañar los materiales y reducir el brillo de las piedras. Si tus accesorios tienen detalles
+                de piedras preciosas o cristales, asegúrate de limpiarlos regularmente con un paño suave para eliminar cualquier suciedad.
             </p>
             <p>
                 Otro consejo importante es no exponerte a ambientes con alta humedad, como la piscina o el baño, ya que esto puede oxidar las piezas de metal
-                con el tiempo. Si alguna joya se moja, sécala inmediatamente para evitar que se deteriore. Con un poco de atención y cuidado, tus piezas de 
-                bijouterie pueden seguir siendo un accesorio brillante y elegante durante muchos años.
+                con el tiempo. Si algún accesorio se moja, sécalo inmediatamente para evitar que se deteriore. Con un poco de atención y cuidado, tus piezas de 
+                bijouterie pueden seguir siendo brillantes y elegantes durante muchos años.
             </p>
+
+            <div style="display: flex; justify-content: center; margin-top: 50px;">
+                <a href="Blog.aspx" class="botonn btn" style="font-size: 20px;">Volver</a>
+            </div>
+
         </div>
     </div>
 

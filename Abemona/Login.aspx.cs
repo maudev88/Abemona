@@ -25,17 +25,18 @@ namespace Abemona
             Usuario usuario = new Usuario();
             UsuarioNegocio negocio = new UsuarioNegocio();
 
+            Accesorio accesorio = new Accesorio();
+
             try
             {
-
-               
                     usuario.Email = txtEmail.Text;
                     usuario.Pass = txtPassword.Text;
 
                     if (negocio.Login(usuario))
                     {
                         Session.Add("usuario", usuario);
-                        Response.Redirect("MiPerfil.aspx", false);
+                    Session.Add("accesorio", accesorio);
+                    Response.Redirect("MiPerfil.aspx", false);
                     }
                     else
                     {

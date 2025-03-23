@@ -15,10 +15,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-      <h1 class="mb-4 ache2">Error</h1>
+    <div style="margin: 25px 25px;">   
+        <h1 class="mb-4 ache2">Error</h1>
     <div class="d-flex flex-column gap-3 lab">
          <asp:Label Text="text" ID="lblError" runat="server" />
     <a href="Default.aspx" class="lab">Inicio</a>
+    </div>
     </div>
 
 </asp:Content>

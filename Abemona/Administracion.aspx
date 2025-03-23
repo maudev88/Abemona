@@ -11,6 +11,14 @@
             color: #e2aed5 !important;
             font-weight: bolder;
         }
+
+         .botonn {
+             transition: transform .3s ease!important;
+        }
+
+        .botonn:hover {
+            transform: scale(1.1);
+        }
     </style>
 
 </asp:Content>
@@ -20,7 +28,7 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
-            <h1 class="acheuno" style="text-align: center; margin: 50px 0px;">Lista de Artículos</h1>
+            <h1 style="text-align: center; margin: 50px 0px;">Lista de Artículos</h1>
 
             <div style="margin: 0 30px 30px;">
                 <div class="row">
@@ -30,7 +38,8 @@
                             <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtFiltro_TextChanged" />
                         </div>
                         <div>
-                            <a href="FormularioAccesorio.aspx" class="btn" style="background-color: #e2aed5;">Agregar</a>
+                            <a href="FormularioAccesorio.aspx" class="btn botonn" style="background-color: #e2aed5; color: white;
+            font-weight: bolder; font-family: Quicksand;">Agregar</a>
                         </div>
                     </div>
 

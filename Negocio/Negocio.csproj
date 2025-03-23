@@ -47,6 +47,7 @@
     <Compile Include="AccesoriosNegocio.cs" />
     <Compile Include="CategoriaNegocio.cs" />
     <Compile Include="MaterialNegocio.cs" />
+    <Compile Include="MensajesNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="UsuarioNegocio.cs" />

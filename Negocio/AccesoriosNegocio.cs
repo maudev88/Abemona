@@ -43,7 +43,7 @@ namespace Negocio
                     aux.IdCategoria = (int)lector["IdCategoria"];
                     aux.IdMaterial = (int)lector["IdMaterial"];
                     aux.Precio = (int)lector["Precio"];
-                    if(!(lector["Imagen"] is DBNull))
+                    if (!(lector["Imagen"] is DBNull))
                         aux.Imagen = (string)lector["Imagen"];
                     aux.Material = new Elemento();
                     aux.Material.Nombre = (string)lector["Material"];
@@ -213,7 +213,7 @@ namespace Negocio
             }
         }
 
-        public void modificar (Accesorio acc)
+        public void modificar(Accesorio acc)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -255,6 +255,165 @@ namespace Negocio
             {
 
                 throw ex;
+            }
+        }
+
+        public List<Accesorio> cantidadFavoritos(string id = "")
+        {
+            List<Accesorio> lista = new List<Accesorio>();
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+
+            try
+            {
+                conexion.ConnectionString = ConfigurationManager.AppSettings["cadenaConexion"];
+                comando.CommandType = System.Data.CommandType.Text;
+
+                // Consulta SQL
+                comando.CommandText = "SELECT " +
+                                      "A.Id AS Aidi, " +
+                                      "A.Codigo, " +
+                                      "A.Nombre AS Nombree, " +
+                                      "COUNT(F.IdAccesorio) AS Favoritos, " +
+                                      "C.Nombre AS Categoria, " +
+                                      "M.Nombre AS Material, " +
+                                      "A.Precio " +
+                                      "FROM Accesorios A " +
+                                      "INNER JOIN Categorias C ON A.IdCategoria = C.Id " +
+                                      "INNER JOIN Materiales M ON A.IdMaterial = M.Id " +
+                                      "LEFT JOIN Favoritos F ON A.Id = F.IdAccesorio " +
+                                      "GROUP BY " +
+                                      "A.Id, " +
+                                      "A.Codigo, " +
+                                      "A.Nombre, " +
+                                      "A.Precio, " +
+                                      "C.Nombre, " +
+                                      "M.Nombre " +
+                                      "ORDER BY Favoritos DESC";
+
+                // Si el parámetro id no es vacío, agrega el filtro
+                if (!string.IsNullOrEmpty(id))
+                {
+                    comando.CommandText += " AND A.Id = @Id";
+                    comando.Parameters.AddWithValue("@Id", id);  // Usando parámetro para evitar inyección SQL
+                }
+
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Accesorio aux = new Accesorio();
+                    aux.Id = (int)lector["Aidi"];
+                    aux.Codigo = (string)lector["Codigo"];
+                    aux.Nombre = (string)lector["Nombree"];
+
+                    // Verifica si el valor de "Favoritos" es DBNull antes de asignarlo
+                    aux.CantFavoritos = lector["Favoritos"] != DBNull.Value ? (int)lector["Favoritos"] : 0;
+
+                    aux.Precio = (int)lector["Precio"];  // Asegúrate que el tipo es correcto
+                    aux.Material = new Elemento();
+                    aux.Material.Nombre = (string)lector["Material"];
+                    aux.Categoria = new Elemento();
+                    aux.Categoria.Nombre = (string)lector["Categoria"];
+
+                    lista.Add(aux);
+                }
+
+                conexion.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        
+
+
+
+
+
+
+        //AGREGADO LUCIANO FAVORITOS
+
+
+        public List<int> IDsFavoritos(int idUser)
+        {
+            List<int> lstFavs = new List<int> { };
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT IdAccesorio FROM FAVORITOS where IdUser = @idUser");
+                datos.setearParametro("@idUser", idUser);
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    lstFavs.Add((int)datos.Lector["idAccesorio"]);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+
+            return lstFavs;
+        }
+
+        public void agregarFav(int idArt, int idUser)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into favoritos values (@idUser, @idArt)");
+                datos.setearParametro("@idUser", idUser);
+                datos.setearParametro("@idArt", idArt);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        public void eliminarFav(int idArt, int idUser)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from favoritos where idUser = @idUser and idAccesorio = @idArt");
+                datos.setearParametro("@idUser", idUser);
+                datos.setearParametro("@idArt", idArt);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
 

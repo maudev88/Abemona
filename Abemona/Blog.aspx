@@ -7,6 +7,30 @@
             width: 1200px;
         }
 
+        .botonn {
+            transition: transform .3s ease !important;
+            background-color: #e2aed5;
+            color: white;
+            font-weight: bolder;
+            font-family: Quicksand;
+        }
+
+            .botonn:hover {
+                transform: scale(1.1);
+                background-color: #e2aed5;
+                color: white;
+                font-weight: bolder;
+                font-family: Quicksand;
+            }
+
+            .botonn:active {
+                transform: scale(1.1);
+                background-color: #e2aed5!important;
+                color: white!important;
+                font-weight: bolder;
+                font-family: Quicksand;
+            }
+
         /*FOOTER*/
 
         .footer {
@@ -22,9 +46,9 @@
             gap: 30px;
         }
 
-        .footer p {
-            margin: 0px;
-        }
+            .footer p {
+                margin: 0px;
+            }
 
         h4 {
             font-weight: bolder;
@@ -47,16 +71,16 @@
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title">Cómo Elegir el Accesorio Perfecto para Cada Ocasión</h5>
                 <p class="card-text">Elegir la joya adecuada puede marcar la diferencia en cualquier atuendo, ya sea para una cita casual o...</p>
-                <a href="Articulo1.aspx" class="btn" style="background-color: #e2aed5;">Ver Artículo</a>
+                <a href="Articulo1.aspx" class="btn botonn">Ver Artículo</a>
             </div>
         </div>
 
-         <div class="card mb-3 tarjetas">
+        <div class="card mb-3 tarjetas">
             <img src="Imagenes/Articulo2Card.jpg" class="card-img-top" alt="...">
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title">Tendencias en Bijouterie para el 2025</h5>
                 <p class="card-text">El mundo de la bijouterie está siempre en constante evolución, y este año no es la excepción...</p>
-                <a href="Articulo2.aspx" class="btn" style="background-color: #e2aed5;">Ver Artículo</a>
+                <a href="Articulo2.aspx" class="btn botonn">Ver Artículo</a>
             </div>
         </div>
 
@@ -65,7 +89,7 @@
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title">Cómo Cuidar Tus Joyas y Mantenerlas Siempre Brillantes</h5>
                 <p class="card-text">Para que tus joyas siempre luzcan impecables, es fundamental cuidarlas adecuadamente...</p>
-                <a href="Articulo3.aspx" class="btn" style="background-color: #e2aed5;">Ver Artículo</a>
+                <a href="Articulo3.aspx" class="btn botonn">Ver Artículo</a>
             </div>
         </div>
     </div>

@@ -20,6 +20,8 @@ namespace Dominio
 
         public string Imagen { get; set; }
 
+        public int CantFavoritos { get; set; }
+
         public bool Admin { get; set; }
     }
 }

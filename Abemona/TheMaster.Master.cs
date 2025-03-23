@@ -15,7 +15,8 @@ namespace Abemona
         {
             imgAvatar.ImageUrl = "https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png";
 
-            if (!(Page is Login || Page is Registro || Page is Inicio || Page is Error || Page is Detalle))
+            if (!(Page is Login || Page is Registro || Page is Inicio || Page is Nosotros || Page is Colección || Page is Blog ||
+                Page is Articulo1 || Page is Articulo2 || Page is Articulo3 || Page is Error || Page is Detalle || Page is Contacto))
             {
                 if (!Seguridad.sesionActiva(Session["usuario"]))
                     Response.Redirect("Login.aspx", false);
@@ -29,7 +30,8 @@ namespace Abemona
                 }
             }
 
-            if ((Page is Inicio || Page is Error || Page is Detalle) && Seguridad.sesionActiva(Session["usuario"]))
+            if ((Page is Inicio || Page is Error || Page is Detalle || Page is Nosotros || Page is Colección || Page is Blog ||
+                Page is Articulo1 || Page is Articulo2 || Page is Articulo3 || Page is Contacto) && Seguridad.sesionActiva(Session["usuario"]))
             {
                 Usuario user = (Usuario)Session["usuario"];
                 lblUser.Text = user.Email;

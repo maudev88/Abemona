@@ -73,12 +73,18 @@
     <Content Include="Articulo3.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="Coleccion.aspx" />
+    <Content Include="Contacto.aspx" />
     <Content Include="Detalle.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="FavAccesorios.aspx" />
+    <Content Include="Favoritos.aspx" />
+    <Content Include="FavUsuarios.aspx" />
     <Content Include="FormularioAccesorio.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MensajeCompleto.aspx" />
+    <Content Include="Mensajes.aspx" />
     <Content Include="MiPerfil.aspx" />
     <Content Include="Nosotras.aspx" />
     <Content Include="Registro.aspx" />
@@ -127,6 +133,13 @@
     <Compile Include="Coleccion.aspx.designer.cs">
       <DependentUpon>Coleccion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Detalle.aspx.cs">
       <DependentUpon>Detalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +153,27 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FavAccesorios.aspx.cs">
+      <DependentUpon>FavAccesorios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FavAccesorios.aspx.designer.cs">
+      <DependentUpon>FavAccesorios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Favoritos.aspx.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Favoritos.aspx.designer.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FavUsuarios.aspx.cs">
+      <DependentUpon>FavUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FavUsuarios.aspx.designer.cs">
+      <DependentUpon>FavUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioAccesorio.aspx.cs">
       <DependentUpon>FormularioAccesorio.aspx</DependentUpon>
@@ -164,6 +198,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeCompleto.aspx.cs">
+      <DependentUpon>MensajeCompleto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MensajeCompleto.aspx.designer.cs">
+      <DependentUpon>MensajeCompleto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes.aspx.cs">
+      <DependentUpon>Mensajes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensajes.aspx.designer.cs">
+      <DependentUpon>Mensajes.aspx</DependentUpon>
     </Compile>
     <Compile Include="MiPerfil.aspx.cs">
       <DependentUpon>MiPerfil.aspx</DependentUpon>

@@ -7,6 +7,30 @@
             font-family: Quicksand;
         }
 
+        .botonn {
+            transition: transform .3s ease !important;
+            background-color: #e2aed5;
+            color: white;
+            font-weight: bolder;
+            font-family: Quicksand;
+        }
+
+            .botonn:hover {
+                transform: scale(1.1);
+                background-color: #e2aed5;
+                color: white;
+                font-weight: bolder;
+                font-family: Quicksand;
+            }
+
+            .botonn:active {
+                transform: scale(1.1);
+                background-color: #e2aed5 !important;
+                color: white !important;
+                font-weight: bolder;
+                font-family: Quicksand;
+            }
+
         /*FOOTER*/
 
         .footer {
@@ -39,7 +63,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1 style="text-align: center; margin: 50px 0px;">Cómo Elegir la Joya Perfecta para Cada Ocasión</h1>
+    <h1 style="text-align: center; margin: 50px 0px;">Cómo elegir el accesorio perfecto para cada ocasión</h1>
 
     <div style="display: flex; align-items: center; flex-direction: column;">
         <div>
@@ -47,16 +71,21 @@
         </div>
         <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;">
             <p>
-                Elegir la joya adecuada puede marcar la diferencia en cualquier atuendo, ya sea para una cita casual o para un evento formal. 
+                Elegir el accesorio adecuado puede marcar la diferencia en cualquier atuendo, ya sea para una cita casual o para un evento formal. 
                 Al seleccionar una pieza, es importante considerar tanto el estilo personal como el tipo de ocasión. Para eventos formales, como bodas o galas, 
                 opta por piezas más elegantes y sofisticadas, como collares con detalles de cristales o pendientes largos. En cambio, para ocasiones informales,
                 puedes elegir accesorios más sencillos pero igual de impactantes, como pulseras delicadas o anillos de diseño minimalista.
             </p>
             <p>
-                Además, ten en cuenta el color y material de tu ropa. Las joyas de plata o de tonos neutros, como el dorado, suelen combinar bien con casi todo.
+                Además, ten en cuenta el color y material de tu ropa. Los accesorios de plata o de tonos neutros, como el dorado, suelen combinar bien con casi todo.
                 Si estás buscando algo más vibrante, puedes elegir piezas que resalten con piedras de colores, como amatistas o zafiros, para dar un toque
                 de personalidad a tu look. La clave es sentirte cómoda y auténtica con lo que llevas.
             </p>
+
+            <div style="display: flex; justify-content: center; margin-top: 50px;">
+                <a href="Blog.aspx" class="botonn btn" style="font-size: 20px;">Volver</a>
+            </div>
+
         </div>
     </div>
 

@@ -27,5 +27,7 @@ namespace Dominio
         public Elemento Material { get; set; }
 
         public string Descripcion { get; set; }
+
+        public int CantFavoritos { get; set; }
     }
 }

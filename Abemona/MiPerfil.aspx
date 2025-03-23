@@ -3,6 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <style>
+
+        .botonn {
+             transition: transform .3s ease!important;
+        }
+
+        .botonn:hover {
+            transform: scale(1.1);
+        }
+
         @media screen and (max-width: 991px) {
             .ache1 {
                 font-size: 43px;
@@ -65,8 +74,8 @@
                     <asp:TextBox runat="server" CssClass="form-control tclass" ID="txtApellido" />
                 </div>
                 <div class="col-md-4" style="display: flex;">
-                    <asp:Button Text="Guardar" OnClick="btnGuardar_Click" CssClass="btn btn-primary botonn" ID="btnGuardar" runat="server" />
-                    <a href="/" class="botonn2 lab" style="color: blue!important; margin-left: 5px; font-family: sans-serif; position: relative; bottom: -8px;">Regresar</a>
+                    <asp:Button Text="Guardar" OnClick="btnGuardar_Click" CssClass="btn botonn" style="background-color: #e2aed5; color: white; font-weight: bolder;" ID="btnGuardar" runat="server" />
+                    <a href="/" class="botonn2 lab" style="color: #e2aed5!important; margin-left: 5px; font-family: sans-serif; position: relative; bottom: -8px;">Regresar</a>
                 </div>
             </div>
             <div class="col-md-4 margLeft">

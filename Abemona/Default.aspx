@@ -56,6 +56,17 @@
             margin: 0px 50px;
         }
 
+         .botonColeccion a{
+            font-weight: bolder !important;
+            transition: transform .3s ease!important;
+            font-family: Quicksand;
+            color: white!important;
+        }
+
+        .botonColeccion a:hover {
+            transform: scale(1.1);
+        }
+
     </style>
 
 </asp:Content>
@@ -80,8 +91,8 @@
 
     <%--BOTON--%>
 
-    <div style="display: flex; justify-content: center; margin-top: 30px;">
-        <a href="#" style="font-family: 'Dancing Script'; font-size: 45px; background-color: #e2aed5; color: white; border-radius: 49%; padding: 19px;"
+    <div style="display: flex; justify-content: center; margin-top: 30px;" class="botonColeccion">
+        <a href="Coleccion.aspx"  style="font-family: 'Dancing Script'; font-size: 45px; background-color: #e2aed5; color: white; border-radius: 49%; padding: 19px;"
             class="btn">Ver Colección</a>
     </div>
 
@@ -96,7 +107,7 @@
         <div style="font-family: Quicksand; font-size: 34px; width: 400px;">
             <p>
                 El estilo de nuestros productos de bijouterie está inspirado en la elegancia atemporal y la innovación moderna, fusionando lo clásico con lo contemporáneo en cada pieza. 
-                Cada joya es cuidadosamente diseñada para resaltar la belleza natural y aportar un toque de sofisticación a cualquier ocasión.
+                Cada accesorio es cuidadosamente diseñado para resaltar la belleza natural y aportar un toque de sofisticación a cualquier ocasión.
             </p>
         </div>
         <div>
@@ -120,12 +131,12 @@
             </div>
             <div class="divColor">
                 <h4>REDES</h4>
-                <p><a href="https://es-la.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color:white; font-weight: bolder; margin-right: 3px;"></i></a>facebook.com/Restaurant</p>
-                <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color:white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
+                <p><a href="https://es-la.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color:white; font-weight: bolder; margin-right: 3px;"></i></a>facebook.com/Abemona</p>
+                <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color:white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Abemona</p>
             </div>
         </div>
         <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
-            © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
+            © 2025 Abemona. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
         </div>
     </footer>
 

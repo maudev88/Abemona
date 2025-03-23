@@ -15,13 +15,34 @@
             background-color: #efefef !important;
         }
 
+        .buscar {
+            background-color: #e2aed5;
+            color: white;
+            font-weight: bolder;
+            transition: transform .3s ease !important;
+        }
+
+            .buscar:hover {
+                transform: scale(1.1) !important;
+                background-color: #e2aed5;
+                color: white;
+            }
+
+             .buscar:active {
+                transform: scale(1.1) !important;
+                background-color: #e2aed5!important;
+                color: white!important;
+            }
+
+    
+
         @media screen and (max-width: 1399px) {
             .responsive {
                 margin: 25px 0;
             }
         }
 
-          /*FOOTER*/
+        /*FOOTER*/
 
         .footer {
             display: flex;
@@ -78,7 +99,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" />
 
-    <h1 style="text-align: center; margin: 50px 0px;">Nuestra Colección</h1>
+    <h1 style="text-align: center; margin: 50px 0px;">Colección</h1>
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
@@ -97,8 +118,8 @@
                 </asp:DropDownList>
 
 
-                <asp:Button Text="Buscar" CssClass="btn btn-primary desple1" ID="btnBuscar" OnClick="btnBuscar_Click" runat="server" />
-                <asp:Button Text="Nueva Búsqueda" CssClass="btn btn-warning desple1" ID="btnNuevaBusqueda" OnClick="btnNuevaBusqueda_Click" runat="server" />
+                <asp:Button Text="Buscar" CssClass="btn desple1 buscar" ID="btnBuscar" OnClick="btnBuscar_Click" runat="server" />
+                <asp:Button Text="Nueva Búsqueda" CssClass="btn desple1 buscar" ID="btnNuevaBusqueda" OnClick="btnNuevaBusqueda_Click" runat="server" />
             </div>
 
 
@@ -122,8 +143,8 @@
                                         CommandArgument='<%#Eval("Id")%>' CommandName="AccesorioId"
                                         OnClick="btnDetalle_Click" runat="server" Style="background-color: #e2aed5; color: white;" />
 
-                                     
-                                       
+
+
                                 </div>
                             </div>
                         </div>
@@ -137,7 +158,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-      <%--FOOTER--%>
+    <%--FOOTER--%>
 
     <footer>
         <div class="footer">
@@ -153,8 +174,8 @@
             </div>
             <div class="divColor">
                 <h4>REDES</h4>
-                <p><a href="https://es-la.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color:white; font-weight: bolder; margin-right: 3px;"></i></a>facebook.com/Restaurant</p>
-                <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color:white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
+                <p><a href="https://es-la.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>facebook.com/Restaurant</p>
+                <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
             </div>
         </div>
         <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
