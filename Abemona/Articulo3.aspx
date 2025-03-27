@@ -58,6 +58,44 @@
             color: white;
             margin: 0px 50px;
         }
+
+        @media screen and (max-width: 991px) {
+             h1 {
+                font-size: 60px;
+            }
+
+             #articulo p {
+                font-size: 50px;
+                text-align: center;
+             }
+
+             #imag {
+                 width: 100%;
+             }
+
+             #imag img {
+                 width: 100%;
+             }
+
+             .botonn {
+                 font-size: 50px!important;
+             }
+
+
+
+             h4 {
+                font-size: 40px;
+            }
+
+            .divColor p {
+                font-size: 30px !important;
+            }
+
+            #loUltimo {
+                font-size: 30px !important;
+            }
+
+        }
     </style>
 
 </asp:Content>
@@ -66,10 +104,10 @@
     <h1 style="text-align: center; margin: 50px 0px;">Cómo cuidar tus accesorios y mantenerlos siempre brillantes</h1>
 
     <div style="display: flex; align-items: center; flex-direction: column;">
-        <div>
+        <div id="imag">
             <img src="Imagenes/Articulo3.jpg" alt="Alternate Text" />
         </div>
-        <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;">
+        <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;" id="articulo">
             <p>
                 Para que tus accesorios siempre luzcan impecables, es fundamental cuidarlas adecuadamente. Un paso esencial es guardarlos en un lugar adecuado,
                 como una caja forrada con tela suave que evite el contacto con otros metales o piedras. Evita el contacto de tus piezas con productos 
@@ -109,7 +147,7 @@
                 <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
             </div>
         </div>
-        <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
+        <div class="divColor" id="loUltimo" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
             © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
         </div>
     </footer>

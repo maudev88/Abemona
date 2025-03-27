@@ -58,6 +58,47 @@
             color: white;
             margin: 0px 50px;
         }
+
+       
+
+        @media screen and (max-width: 991px) {
+
+            h1 {
+                font-size: 60px;
+            }
+
+            .tarjetas {
+                width: 100%;
+            }
+
+            .tarjetas h5 {
+                font-size: 50px;
+            }
+
+            .tarjetas p {
+                font-size: 35px;
+            }
+
+            .tarjetas a {
+                font-size: 40px;
+            }
+
+            
+
+            h4 {
+                font-size: 40px;
+            }
+
+            .divColor p {
+                font-size: 30px !important;
+            }
+
+            #loUltimo {
+                font-size: 30px !important;
+            }
+
+        }
+
     </style>
 
 </asp:Content>
@@ -69,8 +110,8 @@
         <div class="card mb-3 tarjetas">
             <img src="Imagenes/Articulo1Card.jpg" class="card-img-top" alt="...">
             <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Cómo Elegir el Accesorio Perfecto para Cada Ocasión</h5>
-                <p class="card-text">Elegir la joya adecuada puede marcar la diferencia en cualquier atuendo, ya sea para una cita casual o...</p>
+                <h5 class="card-title">Como elegir el accesorio perfecto para cada ocasión</h5>
+                <p class="card-text">Elegir el accesorio adecuado puede marcar la diferencia en cualquier atuendo, ya sea para una cita casual o...</p>
                 <a href="Articulo1.aspx" class="btn botonn">Ver Artículo</a>
             </div>
         </div>
@@ -87,8 +128,8 @@
         <div class="card mb-3 tarjetas">
             <img src="Imagenes/Articulo3Card.jpg" class="card-img-top" alt="...">
             <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Cómo Cuidar Tus Joyas y Mantenerlas Siempre Brillantes</h5>
-                <p class="card-text">Para que tus joyas siempre luzcan impecables, es fundamental cuidarlas adecuadamente...</p>
+                <h5 class="card-title">Cómo cuidar tus accesorios y mantenerlos siempre brillantes</h5>
+                <p class="card-text">Para que tus accesorios siempre luzcan impecables, es fundamental cuidarlos adecuadamente...</p>
                 <a href="Articulo3.aspx" class="btn botonn">Ver Artículo</a>
             </div>
         </div>
@@ -114,7 +155,7 @@
                 <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
             </div>
         </div>
-        <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
+        <div class="divColor" id="loUltimo" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
             © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
         </div>
     </footer>

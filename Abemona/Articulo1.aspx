@@ -58,18 +58,57 @@
             color: white;
             margin: 0px 50px;
         }
+
+        @media screen and (max-width: 991px) {
+             h1 {
+                font-size: 60px;
+            }
+
+             #articulo p {
+                font-size: 50px;
+                text-align: center;
+             }
+
+             #imag {
+                 width: 100%;
+             }
+
+             #imag img {
+                 width: 100%;
+             }
+
+             .botonn {
+                 font-size: 50px!important;
+             }
+
+
+
+             h4 {
+                font-size: 40px;
+            }
+
+            .divColor p {
+                font-size: 30px !important;
+            }
+
+            #loUltimo {
+                font-size: 30px !important;
+            }
+
+        }
+
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1 style="text-align: center; margin: 50px 0px;">Cómo elegir el accesorio perfecto para cada ocasión</h1>
+    <h1 style="text-align: center; margin: 50px 0px;">Como elegir el accesorio perfecto para cada ocasión</h1>
 
     <div style="display: flex; align-items: center; flex-direction: column;">
-        <div>
+        <div id="imag">
             <img src="Imagenes/Articulo1.jpg" alt="Alternate Text" />
         </div>
-        <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;">
+        <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;" id="articulo">
             <p>
                 Elegir el accesorio adecuado puede marcar la diferencia en cualquier atuendo, ya sea para una cita casual o para un evento formal. 
                 Al seleccionar una pieza, es importante considerar tanto el estilo personal como el tipo de ocasión. Para eventos formales, como bodas o galas, 
@@ -109,7 +148,7 @@
                 <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
             </div>
         </div>
-        <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
+        <div class="divColor" id="loUltimo" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
             © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
         </div>
     </footer>

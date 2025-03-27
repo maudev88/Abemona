@@ -28,13 +28,25 @@
                 color: white;
             }
 
-             .buscar:active {
+            .buscar:active {
                 transform: scale(1.1) !important;
-                background-color: #e2aed5!important;
-                color: white!important;
+                background-color: #e2aed5 !important;
+                color: white !important;
             }
 
-    
+        .botonn {
+            font-weight: bolder;
+            transition: transform .3s ease !important;
+            font-family: Quicksand;
+        }
+
+        .botonn:hover {
+                transform: scale(1.1) !important;
+                background-color: #e2aed5;
+                color: white;
+            }
+
+
 
         @media screen and (max-width: 1399px) {
             .responsive {
@@ -72,6 +84,11 @@
 
 
         @media screen and (max-width: 991px) {
+            
+            h1 {
+                font-size: 60px;
+            }
+
             .botonn {
                 font-size: 32px !important;
             }
@@ -85,12 +102,27 @@
             }
 
             .desple1 {
-                width: 256px !important;
-                font-size: 30px !important;
+                width: 300px !important;
+                font-size: 35px !important;
             }
 
             .filtros {
                 flex-direction: column;
+                align-items: center;
+            }
+
+
+           
+            h4 {
+                font-size: 40px;
+            }
+
+            .divColor p {
+                font-size: 30px !important;
+            }
+
+            #loUltimo {
+                font-size: 30px !important;
             }
         }
     </style>
@@ -178,7 +210,7 @@
                 <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
             </div>
         </div>
-        <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
+        <div class="divColor" id="loUltimo" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
             © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
         </div>
     </footer>

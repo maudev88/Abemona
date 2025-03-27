@@ -1,17 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TheMaster.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Abemona.Login" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-     <style>
+    <style>
+        .btnhover {
+            transition: transform .3s ease !important;
+        }
 
-         .btnhover {
-             transition: transform .3s ease!important;
-         }
+            .btnhover:hover {
+                transform: scale(1.1) !important;
+            }
 
-         .btnhover:hover {
-             transform: scale(1.1)!important;
-         }
-
-           /*FOOTER*/
+        /*FOOTER*/
 
         .footer {
             display: flex;
@@ -38,79 +38,80 @@
             color: white;
             margin: 0px 50px;
         }
-       
-        
+
+
         @media screen and (max-width: 991px) {
-            .ache2 {
-                font-size: 43px;
+
+            h1 {
+                font-size: 60px;
             }
+
             .lab {
-                font-size: 31px;
+                font-size: 50px;
             }
+
             .botonn {
-                font-size: 31px!important;
+                font-size: 45px !important;
                 margin-right: 14px;
             }
+
             .botonn2 {
                 position: relative;
                 top: 4px;
+                font-size: 45px !important;
             }
+
             .tclass {
-                width: 40vw!important;
-                height: 47px;
-                font-size: 29px!important;
+                width: 80vw !important;
+                height: 70px;
+                font-size: 50px !important;
+                border: #e2aed5 solid 2px;
+            }
+
+            #bloq1 {
+                margin: 45px 0 40px;
+            }
+
+            #bloq2 {
+                margin: 0 0 40px;
+            }
+
+            #botones {
+                display: flex;
+                margin-top: 55px;
+                gap: 30px;
             }
         }
-
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div style="margin: 50px 50px;">   
+    <div style="margin: 50px 50px;">
 
-         <div class="row">
-        <div class="col-4">
-            <h1 class="ache2" style="margin-bottom: 20px;">Login</h1>
-            <div >
-                <label class="form-label lab">Email</label>
-                <asp:TextBox runat="server" CssClass="form-control tclass" style="width: 400px;" ID="txtEmail" TextMode="Email" REQUIRED/>
+        <div class="row">
+            <div class="col-4">
+                <h1 class="ache2" style="margin-bottom: 20px;">Login</h1>
+                <div id="bloq1">
+                    <label class="form-label lab">Email</label>
+                    <asp:TextBox runat="server" CssClass="form-control tclass" Style="width: 400px;" ID="txtEmail" TextMode="Email" REQUIRED />
+                </div>
+                <div class="mb-3" id="bloq2">
+                    <label class="form-label lab">Password</label>
+                    <asp:TextBox runat="server" CssClass="form-control tclass" ID="txtPassword" Style="width: 400px;" TextMode="Password" REQUIRED />
+                </div>
+
+                <div id="botones">
+                    <asp:Button Text="Ingresar" CssClass="btn  botonn btnhover " Style="background-color: #e2aed5; color: white; font-weight: bolder;" ID="btnLogin" OnClick="btnLogin_Click" runat="server" />
+                    <a href="/" class="lab botonn2 " style="color: #e2aed5!important; margin-left: 5px; font-family: sans-serif; position: relative; bottom: -3px;">Cancelar</a>
+
+                </div>
+
             </div>
-            <div class="mb-3">
-                <label class="form-label lab">Password</label>
-                <asp:TextBox runat="server" CssClass="form-control tclass" ID="txtPassword" style="width: 400px;" TextMode="Password" REQUIRED/>
-            </div>
-            <asp:Button Text="Ingresar" CssClass="btn  botonn btnhover " style="background-color: #e2aed5; color: white; font-weight: bolder;" ID="btnLogin" OnClick="btnLogin_Click" runat="server" /> 
-            <a href="/" class="lab botonn2 " style="color: #e2aed5!important; margin-left: 5px; font-family: sans-serif; position: relative; bottom: -3px;">Cancelar</a>
         </div>
+
     </div>
 
-    </div>
 
-
-     <%--FOOTER--%>
-
-    <footer style="position: absolute;width: 100%;bottom: 0;">
-        <div class="footer">
-            <div class="divColor">
-                <h4>DIRECCIÓN</h4>
-                <p>La Calle 123</p>
-                <p>Capital Federal, Bs. As.</p>
-            </div>
-            <div class="divColor">
-                <h4>HORARIOS</h4>
-                <p>Lun-Vie: 10:00 AM - 19:00 PM</p>
-                <p>Sab: 11:00 AM - 18:00 AM</p>
-            </div>
-            <div class="divColor">
-                <h4>REDES</h4>
-                <p><a href="https://es-la.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>facebook.com/Restaurant</p>
-                <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
-            </div>
-        </div>
-        <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
-            © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
-        </div>
-    </footer>
 
 </asp:Content>

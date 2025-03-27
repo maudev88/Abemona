@@ -58,6 +58,46 @@
             color: white;
             margin: 0px 50px;
         }
+
+
+         @media screen and (max-width: 991px) {
+             h1 {
+                font-size: 60px;
+            }
+
+             #articulo p {
+                font-size: 50px;
+                text-align: center;
+             }
+
+             #imag {
+                 width: 100%;
+             }
+
+             #imag img {
+                 width: 100%;
+             }
+
+             .botonn {
+                 font-size: 50px!important;
+             }
+
+
+
+             h4 {
+                font-size: 40px;
+            }
+
+            .divColor p {
+                font-size: 30px !important;
+            }
+
+            #loUltimo {
+                font-size: 30px !important;
+            }
+
+        }
+
     </style>
 
 </asp:Content>
@@ -66,10 +106,10 @@
     <h1 style="text-align: center; margin: 50px 0px;">Tendencias en Bijouterie para el 2025</h1>
 
     <div style="display: flex; align-items: center; flex-direction: column;">
-        <div>
+        <div id="imag">
             <img src="Imagenes/Articulo2.jpg" alt="Alternate Text" />
         </div>
-        <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;">
+        <div style="padding: 0 60px; font-size: 30px; margin: 60px 0;" id="articulo">
             <p>
                 El mundo de la bijouterie está siempre en constante evolución, y este año no es la excepción. En 2025, las tendencias están marcadas por el
                 regreso de los diseños vintage con un toque moderno. Las piezas de inspiración retro, como collares con medallones o pendientes de perlas,
@@ -111,7 +151,7 @@
 
             </div>
         </div>
-        <div class="divColor" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
+        <div class="divColor" id="loUltimo" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
             © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
         </div>
     </footer>

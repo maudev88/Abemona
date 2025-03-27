@@ -10,7 +10,7 @@
         }
   </script>
     <style>
-        h4 {
+       #datos h4 {
             color: #e2aed5 !important;
         }
 
@@ -21,6 +21,34 @@
         .botones {
             font-family: Quicksand;
             font-weight: bolder;
+        }
+
+         /*FOOTER*/
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 70px;
+            justify-content: center;
+            background-color: #e2aed5;
+            font-family: Quicksand;
+            font-weight: bolder;
+            padding: 16px 70px;
+            text-align: center;
+            gap: 30px;
+        }
+
+            .footer p {
+                margin: 0px;
+            }
+
+        h4 {
+            font-weight: bolder;
+        }
+
+        .divColor {
+            color: white;
+            margin: 0px 50px;
         }
 
         @media screen and (max-width: 1399px) {
@@ -36,12 +64,45 @@
                 font-size: 32px !important;
             }
 
-            .acheuno {
-                font-size: 41px;
+            .botones {
+                 font-size: 32px !important;
+            }
+
+             h1 {
+                font-size: 60px;
             }
 
             .fav {
                 font-size: 32px !important;
+            }
+
+             #texto p {
+                font-size: 50px;
+                text-align: center;
+            }
+
+            h4 {
+                font-size: 40px;
+            }
+
+             h5 {
+                font-size: 35px;
+            }
+
+             .botoGrandes {
+                 margin-top: 57px;
+             }
+
+             .iniSesion {
+                 font-size: 30px;
+             }
+
+            .divColor p {
+                font-size: 30px !important;
+            }
+
+            #loUltimo {
+                font-size: 30px !important;
             }
         }
 
@@ -73,7 +134,7 @@
             <div>
                 <img src="" id="txtImg" runat="server" onerror="setDefaultImage(this)" alt="Alternate Text" style="max-height: 484px; max-width: 540px; padding-top: 31px; padding-bottom: 31px;" />
             </div>
-            <div class="d-flex flex-column gap-3">
+            <div class="d-flex flex-column gap-3" id="datos">
                 <div>
                     <h4>Código:</h4>
                     <h5 id="txtCodigo" runat="server"></h5>
@@ -106,7 +167,7 @@
 
        
 
-                <div style="display: flex; justify-content: space-around;" class="align-items-lg-center">
+                <div style="display: flex; justify-content: space-around;" class="align-items-lg-center botoGrandes">
                     <div class="botonnDiv">
                         <asp:Button Text="Ir al Catálogo" ID="btnVolver" CssClass="btn botonn d-block mx-auto mt-xxl-5 botones" OnClick="btnVolver_Click" runat="server" Style="color: white; background-color: #e2aed5;" />
                     </div>
@@ -137,15 +198,39 @@
                         </asp:LinkButton>
 
                         <div style="display: flex; align-items: center;">
-                            <asp:Label Text="" Style="position: absolute; margin-left: 11px;" ID="lblError" ForeColor="Red" runat="server" />
+                            <asp:Label Text="" Style="position: absolute; margin-left: 11px;" ID="lblError" ForeColor="Red" runat="server" CssClass="iniSesion"/>
                         </div>
 
                     </div>
                 </div>
 
 
-
     </div>
+
+                 <%--FOOTER--%>
+
+    <footer>
+        <div class="footer">
+            <div class="divColor">
+                <h4>DIRECCIÓN</h4>
+                <p>La Calle 123</p>
+                <p>Capital Federal, Bs. As.</p>
+            </div>
+            <div class="divColor">
+                <h4>HORARIOS</h4>
+                <p>Lun-Vie: 10:00 AM - 19:00 PM</p>
+                <p>Sab: 11:00 AM - 18:00 AM</p>
+            </div>
+            <div class="divColor">
+                <h4>REDES</h4>
+                <p><a href="https://es-la.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>facebook.com/Restaurant</p>
+                <p><a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fa fa-instagram" style="color: white; font-weight: bolder; margin-right: 3px;"></i></a>instagram/Restaurant</p>
+            </div>
+        </div>
+        <div class="divColor" id="loUltimo" style="font-family: Quicksand; font-weight: bolder; font-weight: bolder; text-align: center; background-color: #e2aed5; padding-bottom: 16px; margin: 0;">
+            © 2025 Restaurant. Todos los derechos reservados. Diseñado por Mauro Etchegoyen.
+        </div>
+    </footer>
 
             </ContentTemplate>
         </asp:UpdatePanel>

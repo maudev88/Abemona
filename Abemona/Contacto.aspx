@@ -28,15 +28,32 @@
              transform: scale(1.1)!important;
          }
 
+          .textBoxPosta {
+                 border: #e2aed5 solid 2px;
+             }
+
+             .txtMensaje {
+                 border: #e2aed5 solid 2px;
+             }
+
          @media (max-width: 991px) {
              h1 {
                 text-align: center;
                 margin: 50px 0px !important;
                 font-size: 68px;
+                padding: 0px 45px;
             }
              .divP {
                  font-size: 43px;
                  text-align: center;
+             }
+
+             .textBoxPosta {
+                 border: #e2aed5 solid 2px;
+             }
+
+             .txtMensaje {
+                 border: #e2aed5 solid 2px;
              }
 
              .textBox {
