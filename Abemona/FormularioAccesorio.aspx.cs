@@ -94,16 +94,6 @@ namespace Abemona
                 nuevo.Descripcion = txtDescripcion.Text;
 
 
-                if (cargaImagen.PostedFile.FileName != "")
-                {
-                    string ruta = Server.MapPath("./Imagenes/");
-                    cargaImagen.PostedFile.SaveAs(ruta + nuevo.Codigo + ".jpg");
-                    nuevo.Imagen = "Imagenes/" + nuevo.Codigo + ".jpg";
-                    txtImagen.DataBind();
-                }
-
-
-
                 if (txtImagen.Text == "")
                 {
                     nuevo.Imagen = "https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty-300x240.jpg";
@@ -112,6 +102,19 @@ namespace Abemona
                 {
                     nuevo.Imagen = txtImagen.Text;
                 }
+
+
+                if (cargaImagen.PostedFile.FileName != "")
+                {
+                    string ruta = Server.MapPath("./Imagenes/");
+                    cargaImagen.PostedFile.SaveAs(ruta + "Producto-" + nuevo.Codigo + ".jpg");
+                    nuevo.Imagen = "Imagenes/Producto-" + nuevo.Codigo + ".jpg";
+                    
+                }
+
+
+
+               
 
 
 
