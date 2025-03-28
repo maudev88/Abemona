@@ -11,6 +11,7 @@ namespace Abemona
 {
     public partial class FormularioAccesorio : System.Web.UI.Page
     {
+        public bool SeleccionarURL { get; set; }
         public bool ConfirmaEliminacion { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,6 +19,7 @@ namespace Abemona
 
             try
             {
+              
                 if (!IsPostBack)
                 {
                     CategoriaNegocio negocio = new CategoriaNegocio();
@@ -91,6 +93,17 @@ namespace Abemona
                 nuevo.Precio = int.Parse(txtPrecio.Text);
                 nuevo.Descripcion = txtDescripcion.Text;
 
+
+                if (cargaImagen.PostedFile.FileName != "")
+                {
+                    string ruta = Server.MapPath("./Imagenes/");
+                    cargaImagen.PostedFile.SaveAs(ruta + nuevo.Codigo + ".jpg");
+                    nuevo.Imagen = "Imagenes/" + nuevo.Codigo + ".jpg";
+                    txtImagen.DataBind();
+                }
+
+
+
                 if (txtImagen.Text == "")
                 {
                     nuevo.Imagen = "https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty-300x240.jpg";
@@ -100,6 +113,8 @@ namespace Abemona
                     nuevo.Imagen = txtImagen.Text;
                 }
 
+
+
                 if (Request.QueryString["id"] != null)
                 {
                     nuevo.Id = int.Parse(txtId.Text);
@@ -108,9 +123,9 @@ namespace Abemona
                 else
                  negocio.agregar(nuevo);
 
-                
+
                 Response.Redirect("Administracion.aspx", false);
-                
+
 
             }
             catch (Exception ex)
@@ -152,6 +167,15 @@ namespace Abemona
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
+        }
+
+       
+
+        protected void CheckBoxURL_CheckedChanged(object sender, EventArgs e)
+        {
+            SeleccionarURL = CheckBoxURL.Checked;
+            
+
         }
     }
 }
